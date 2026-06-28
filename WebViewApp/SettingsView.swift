@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct SettingsView: View {
-    @AppStorage("webURL") private var webURL: String = "http://47.115.132.109:8081/"
+    @AppStorage("webURL") private var webURL: String = "http://www.baidu.com/"
     @State private var tempURL: String = ""
     @State private var showValidation = false
     @State private var isValidURL = true
