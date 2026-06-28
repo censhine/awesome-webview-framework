@@ -154,7 +154,7 @@ struct SettingsView: View {
     }
     
     private func resetToDefault() {
-        let defaultURL = "http://47.115.132.109:8081/"
+        let defaultURL = "http://www.baidu.com/"
         tempURL = defaultURL
         webURL = defaultURL
         showValidation = false
