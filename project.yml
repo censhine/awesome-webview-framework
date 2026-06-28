@@ -1,0 +1,66 @@
+name: WebViewApp
+options:
+  bundleIdPrefix: com.webviewapp
+  deploymentTarget:
+    iOS: "16.0"
+    macOS: "13.0"
+  xcodeVersion: "15.0"
+  createIntermediateGroups: true
+  generateEmptyDirectories: true
+
+settings:
+  base:
+    SWIFT_VERSION: "5.9"
+    DEVELOPMENT_TEAM: ""
+
+targets:
+  WebViewApp:
+    type: application
+    platform: [iOS, macOS]
+    sources:
+      - path: WebViewApp
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.gemini.webviewapp
+        PRODUCT_NAME: WebViewApp
+        MARKETING_VERSION: "1.0.0"
+        CURRENT_PROJECT_VERSION: "1"
+        INFOPLIST_FILE: WebViewApp/Info.plist
+        CODE_SIGN_STYLE: Automatic
+        ASSETCATALOG_COMPILER_APPICON_NAME: AppIcon
+        # Allow HTTP (non-HTTPS) connections
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+      configs:
+        Debug:
+          SWIFT_ACTIVE_COMPILATION_CONDITIONS: DEBUG
+        Release:
+          SWIFT_OPTIMIZATION_LEVEL: -O
+    info:
+      path: WebViewApp/Info.plist
+      properties:
+        CFBundleName: WebViewApp
+        CFBundleDisplayName: WebViewApp
+        CFBundleIdentifier: $(PRODUCT_BUNDLE_IDENTIFIER)
+        CFBundleVersion: $(CURRENT_PROJECT_VERSION)
+        CFBundleShortVersionString: $(MARKETING_VERSION)
+        CFBundlePackageType: $(PRODUCT_BUNDLE_PACKAGE_TYPE)
+        CFBundleExecutable: $(EXECUTABLE_NAME)
+        LSRequiresIPhoneOS: true
+        UILaunchScreen: {}
+        UIApplicationSceneManifest:
+          UIApplicationSupportsMultipleScenes: true
+        UISupportedInterfaceOrientations:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        UISupportedInterfaceOrientations~ipad:
+          - UIInterfaceOrientationPortrait
+          - UIInterfaceOrientationPortraitUpsideDown
+          - UIInterfaceOrientationLandscapeLeft
+          - UIInterfaceOrientationLandscapeRight
+        NSAppTransportSecurity:
+          NSAllowsArbitraryLoads: true
+        # macOS specific
+        LSApplicationCategoryType: public.app-category.utilities
+        NSHumanReadableCopyright: "Copyright © 2024. All rights reserved."
